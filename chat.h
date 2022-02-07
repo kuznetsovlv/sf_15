@@ -1,7 +1,6 @@
 #pragma once
 
 #include "sha1.h"
-#include "test.h"
 #include "string.h"
 
 #define SIZE 10
