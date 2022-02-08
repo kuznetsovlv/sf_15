@@ -22,10 +22,12 @@ class HashTable final
 	size_t hash(const char*, const size_t)const noexcept;
 	void resize();
 
+	public:
 	HashTable(const size_t);
 	~HashTable();
 
 	void add(const char*, const uint*);
-	uint* find(const char*);
+	uint* find(const char*)const noexcept;
 	void remove(const char*);
+	size_t size()const noexcept;
 };

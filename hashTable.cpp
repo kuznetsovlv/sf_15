@@ -71,10 +71,56 @@ void HashTable::add(const char *key, const uint *value)
 			strcpy((_array + index)->key, key);
 			(_array + index)->value = new uint[SHA1HASHLENGTHUINTS];
 			memcpy((_array + index)->value, value, SHA1HASHLENGTHBYTES);
+			++_size;
 			return;
 		}
 	}
 
 	resize();
 	add(key, value);
+}
+
+uint *HashTable::find(const char *key)const noexcept
+{
+	for(size_t i = 0; i < _capacity; ++i)
+	{
+		size_t index = hash(key, i);
+
+		if((_array + index)->status == empty)
+		{
+			return nullptr;
+		}
+
+		if((_array + index)->status == engaged && !strcmp(key, (_array + index)->key))
+		{
+			return (_array + index)->value;
+		}
+	}
+	return nullptr;
+}
+
+void HashTable::remove(const char *key)
+{
+		for(size_t i = 0; i < _capacity; ++i)
+		{
+			size_t index = hash(key, i);
+
+			if((_array + index)->status == empty)
+			{
+				return;
+			}
+
+			if((_array + index)->status == engaged && !strcmp(key, (_array + index)->key))
+			{
+				delete[] (_array + index)->key;
+				delete[] (_array + index)->value;
+				(_array + index)->status = deleted;
+				--_size;
+			}
+		}
+}
+
+size_t HashTable::size()const noexcept
+{
+	return _size;
 }
