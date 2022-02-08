@@ -7,10 +7,11 @@
 
 class Chat {
     public:
-        void reg(char _login[LOGINLENGTH], char _pass[], int pass_length);
-        bool login(char _login[LOGINLENGTH], char _pass[], int pass_length);
+		Chat();
+		~Chat();
+        void reg(const char _login[LOGINLENGTH], const char _pass[], const int pass_length);
+        bool login(const char _login[LOGINLENGTH], const char _pass[], const int pass_length);
 
-        friend void test(Chat& c);
     private:
-		HashTable _data;
+		HashTable *_data;
 };

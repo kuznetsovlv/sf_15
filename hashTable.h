@@ -24,7 +24,7 @@ class HashTable final
 	void resize();
 
 	public:
-	HashTable(const size_t);
+	HashTable(const size_t = 10);
 	~HashTable();
 
 	void add(const char*, const uint*);

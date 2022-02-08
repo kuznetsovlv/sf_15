@@ -23,4 +23,4 @@ const uint H[5] = {
 uint cycle_shift_left(uint val, int bit_count);
 uint bring_to_human_view(uint val);
 
-uint* sha1(char* message, uint msize_bytes); // отданный массив нужно удалить вручную
+uint* sha1(const char* message, const uint msize_bytes); // отданный массив нужно удалить вручную

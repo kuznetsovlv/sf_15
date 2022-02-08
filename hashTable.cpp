@@ -6,7 +6,7 @@ Pair::Pair()noexcept:status(empty),key(nullptr),value(nullptr)
 {
 }
 
-HashTable::HashTable(const size_t size = 10):_capacity(size),_size(0)
+HashTable::HashTable(const size_t size):_capacity(size),_size(0)
 {
 	_array = new Pair[size];
 }
