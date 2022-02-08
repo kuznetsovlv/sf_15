@@ -1,7 +1,5 @@
 #pragma once
 
-using namespace std;
-
 typedef unsigned int uint;
 
 #define one_block_size_bytes 64 // количество байб в блоке
