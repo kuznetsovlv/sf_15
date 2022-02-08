@@ -12,4 +12,5 @@ void Chat::reg(char _login[LOGINLENGTH], char _pass[], int pass_length) {
 bool Chat::login(char _login[LOGINLENGTH], char _pass[], int pass_length) {
     // Ваш код
     // Нужно вернуть true в случае успешного логина
+    return false;
 }
