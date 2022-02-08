@@ -1,6 +1,7 @@
+#include <iostream>
+#include <cstring>
 #include "chat.h"
-#include "iostream"
-#include "string.h"
+#include "hashTable.h"
 
 Chat::Chat() {
     data_count = 0;
